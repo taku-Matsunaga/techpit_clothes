@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Cart extends Model
 {
-    public function carts()
+    public function products()
     {
         return $this->belongsToMany(
-          Cart::class,
-          'line_items',
+            Product::class,
+            'line_items',
         )->withPivot(['id', 'quantity']);
-   }
+    }
 }
